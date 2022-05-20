@@ -24,8 +24,7 @@ $ npm install --save-dev hardhat
 ``` sh
 $ npx hardhat test
 ```
-
-3.目录结构如下：
+3. 目录结构如下：
 
 ```sh
 ├── contracts           # 过关用的Solidity代码
