@@ -28,17 +28,12 @@ describe("09King", function () {
     //1.king不再是levelOwner
     //2.levelOwner无法通过转账取回King
     expect(await levelContract._king()).to.equal(runContract.address);
-    let isException = false;
-    try {
-      await levelOwner.sendTransaction({
+    await expect(
+      levelOwner.sendTransaction({
         to: levelContract.address,
         value: 1000,
-      });
-    } catch (e) {
-      isException = true;
-      //异常才是对的
-    }
-    expect(isException).to.equal(true);
+      })
+    ).to.be.reverted;
     expect(await levelContract._king()).to.not.equal(levelOwner.address);
   });
 });
