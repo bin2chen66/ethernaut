@@ -21,7 +21,7 @@ describe("16Preservation", function () {
     runContract = await tools.deployContract("PreservationRun", player);
 
     //检查原始
-    expect(await levelContract.owner()).to.equal(levelOwner.address);
+    expect(await levelContract.owner()).to.not.equal(player.address);
   });
 
   it("attacks", async function () {
