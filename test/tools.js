@@ -1,10 +1,10 @@
 const { ethers, waffle } = require("hardhat");
 module.exports = {
   //通用的初始化关卡方法，返回三个参数：player,levelOwner,levelContract
-  initLevel: async function (contractName, params = {}) {
+  initLevel: async function (contractName, ...params) {
     const [player, levelOwner] = await ethers.getSigners();
     const Contract = await ethers.getContractFactory(contractName, levelOwner);
-    const levelContract = await Contract.deploy(params);
+    const levelContract = await Contract.deploy(...params);
     await levelContract.deployed();
     return [player, levelOwner, levelContract];
   },
