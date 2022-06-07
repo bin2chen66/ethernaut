@@ -9,9 +9,9 @@ module.exports = {
     return [player, levelOwner, levelContract];
   },
   //部署合约，通知用来部署run
-  deployContract: async function (contractName, owner, params = {}) {
+  deployContract: async function (contractName, owner, ...params) {
     const Contract = await ethers.getContractFactory(contractName, owner);
-    const contract = await Contract.deploy(params);
+    const contract = await Contract.deploy(...params);
     await contract.deployed();
     return contract;
   },

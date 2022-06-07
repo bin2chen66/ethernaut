@@ -17,4 +17,5 @@ contract ShopRun {
     // 也可以调用gasleft()来达到两次返回不一样的值，但比较麻烦
     return ILevel(msg.sender).isSold() ? 0 : 100;
   } 
+  
 }
