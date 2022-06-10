@@ -19,4 +19,7 @@ module.exports = {
   getBalance: async function (address) {
     return await waffle.provider.getBalance(address);
   },
+  getStorageAt: async function (address, pos) {
+    return await waffle.provider.getStorageAt(address, pos);
+  },
 };
