@@ -21,7 +21,7 @@ contract DoubleEntryPointRun is IDetectionBot {
   function handleTransaction(address user, bytes calldata msgData) external {
     //msgData为DoubleEntryPoint.delegateTransfer(address to,uint256 value,address origSender)的msg.data
     (,,address origSender) = abi.decode(msgData[4:],(address,uint256,address));
-    //只过滤不能来自Vault即可，其他正常转账
+    //只过滤不能来自Vault即可，其他正常转
     if (origSender == cryptoVault) {
       IForta(msg.sender).raiseAlert(user);
     }
