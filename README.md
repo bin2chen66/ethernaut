@@ -5,6 +5,14 @@ Ethernaut是一个基于 Web3/Solidity 的过关游戏。
 
 官网：https://ethernaut.openzeppelin.com
 
+
+
+每一关都有对应的blog，详见：https://dev.to/bin2chen/series/18183
+
+有问题或者任何建议可以twitter上DM我，感谢。
+
+https://twitter.com/bin2chen
+
 ## Requirements
 hardhat 
 
@@ -49,3 +57,4 @@ $ npx hardhat test
     ├── 05Token.js
     ...
 ```
+
